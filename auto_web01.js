@@ -10,6 +10,7 @@ async function openGoogle() {
     let driver = await new Builder().forBrowser('chrome').build();
     await driver.get('http://www.google.com/ncr');
     await click('Ich stimme zu');
+    await driver.findElement(By.name('q').sendKeys('Essen kochen', Key.RETURN));
 }
 
 async function click(text) {
